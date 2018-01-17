@@ -1,0 +1,39 @@
+<template name="SiteInformation">
+
+  <div id="SiteInformation" class="panel-collapse collapse off">
+    <form>
+       <table class="table table-striped table-bordered table-hover">
+       <thead>
+       <tr>
+
+         <th>Site ID</th>
+         <th>Site Address</th>
+
+            <th>Suffix</th>
+            <th>Category</th>
+            <th>Power source</th>
+             <th>Area</th>
+              <th>Office</th>
+               <th>Vendor</th>
+      </tr>
+      </thead>
+      <tbody>
+  {{# each SI }}
+      <tr>
+          <td>{{ SiteCode}}</td>
+          <td>{{ SiteName }}</td>
+          <td>{{Suffix}}</td>
+          <td>{{ SiteCategory }}</td>
+          <td>{{ Powertype }}</td>
+           <td>{{ Area }}</td>
+            <td>{{ Office }}</td>
+              <td>{{ Vendor }}</td>
+
+      </tr>
+  {{/each}}
+      </tbody>
+      </table>
+      </form>
+</div>
+
+</template>

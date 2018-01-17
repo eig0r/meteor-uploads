@@ -1,0 +1,19 @@
+<template name="HandelerButtons" >
+
+  <button id="Get"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#SiteInformation">Site Info</button>
+  <button id="Assign" class="Assign btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#AssignTo" disabled >Assign To</button>
+  <button id="PG"     class="editItem btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#PGConnection "  disabled>PG</button>
+  <button id="Access" class="editItem btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#Access1"  disabled>Access</button>
+  <button id="Statuso" class="editItem btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#Status1" disabled  >Status</button>
+  <button id="Esclation" class="Esclation btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#6{{_id}}"  disabled>Esclation</button>
+
+  <button id="Spare" class="Esclation btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#Spare"  disabled>Spare</button>
+
+
+{{>SiteInformation}}
+{{>AssignTo}}
+{{>PG}}
+{{>Status}}
+{{>Access}}
+
+</template>

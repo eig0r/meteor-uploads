@@ -1,0 +1,182 @@
+<template name="mainView">
+{{> SideNav}}
+
+
+<div class="panel panel-primary">
+       <div class="panel-body">
+    <form class="new-Site-Alarm" >
+    <div class="form-group">
+          <div class="col-xs-4">
+      <label>Total</label>{{Account}}
+      <input type="text" class="form-control" id="SiteID" name="SiteID" value="{{Alarmncounter}}" >
+      </div>
+      <div class="col-xs-4">
+  <label>On Progress</label>
+  <input type="text" class="form-control" id="SiteIDw" name="SiteID" value=""  >
+  </div>
+          <div class="col-xs-4">
+      <label>Pending</label>
+      <input type="text" class="form-control " id="SiteIDe" name="SiteID" value="{{AlarmncounterPending}}">
+        </div>
+</div>
+    </form>
+  </div>
+</div>
+
+
+<legend>  <a href="/OctoberOffice" class="btn btn-defult">October   </a>
+<a href="/MaadieOffice" class="btn btn-defult">Maadie</a>
+<a href="/ShoubraOffice" class="btn btn-defult">Shoubra</a>
+<a href="/MohandsenOffice" class="btn btn-defult">Mohandsen   </a>
+<a href="/NasrCityOffice" class="btn btn-defult">Nasr City</a>
+<a href="/GisrSuezOffice" class="btn btn-defult"> Gisr Suez</a>
+<a href="/NewCairoOffice" class="btn btn-defult">New Cairo</a>
+</legend>
+
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+    <form class="new-Site-Alarm" >
+
+
+      <label>Site ID</label>
+      <input type="text" class="form-control" id="SiteSearchId" name="SiteSearchId" >
+  <button id="SearchSite" class="SearchSite btn btn-primary  pull-right" >Find</button>
+
+      <p><label></label></p>
+
+<div class="form-group">
+<div class="panel-body">
+<div class="col-xs-4">
+      <label>Area</label>
+        <select name="AlarmName" id="AlarmName" class="  form-control input-lg"  >
+          {{# each SearchSiteresult }}
+                       <option >{{Area}}</option>
+{{/each}}
+</select>
+</div>
+<div class="col-xs-4">
+<label>Office</label>
+  <select name="SearchSelect" id="SearchSelect" class="  form-control input-lg"  >
+    {{# each SearchSiteresult }}
+                 <option >{{Office}}</option>
+{{/each}}
+</select>
+      </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+       <div class="panel-body">
+          <div class="col-xs-4">
+      <label>Area</label>
+    <select name="AlarmName" id="area" class=" AlarmName form-control input-lg"  >
+                 <option ></option>
+                 <option >CE</option>
+                 <option >CW</option>
+
+
+             </select>
+      </div>
+      <div class="col-xs-4">
+  <label>Office</label>
+
+<select name="AlarmName" id="office" class=" AlarmName form-control input-lg"  >
+             <option ></option>
+             <option >OCT</option>
+             <option >Nasr</option>
+             <option >Shoubra</option>
+             <option >Mohandsen</option>
+             <option >NewCairo</option>
+             <option >Maadie</option>
+             <option >Gisr</option>
+
+         </select>
+  </div>
+  <div class="col-xs-8">
+<label>Alarm name </label>
+<select name="AlarmName" id="AlarmName" class=" AlarmName form-control input-lg"  >
+             <option >Local Cell Unusable</option>
+             <option > Main Power Cutt Off</option>
+             <option >GSM Cell out Of Service</option>
+             <option > DC Power Supplay Abnormal</option>
+             <option > Shelter High Temperature</option>
+             <option > RF Unit Temp. Unacceptable</option>
+             <option > Fire Alarm</option>
+             <option > OML FAULT</option>
+             <option > main input out of range</option>
+             <option > 3G Cell Down</option>
+             <option > Rectifier Major Alarm</option>
+             <option > (3G)Local Cell Unusable</option>
+             <option > Backup Generator ON Off Status</option>
+             <option > Main Electricity one Phase Down</option>
+             <option > AC input Power Failure</option>
+         </select>
+        </div>
+  </div>
+    </div>
+    <p><label></label></p>
+    <div class="form-group">
+      <div class="panel-body">
+
+               </div>
+</div>
+    <button type="submit" class="btn btn-primary  pull-right" >Save</button>
+    </form>
+  </div>
+</div>
+ {{# each mdata }}
+
+
+      <div class="panel panel-primary">
+
+
+
+   <div class="panel-heading">
+<div><span ><label>Site ID  : {{SiteID}}</label>     </span>
+
+    <div class="col-xs-1 pull-right" >
+<input type="text" class="form-control" id="Time" name="Time"  value="{{AlarmSLA.hours}}: {{AlarmSLA.minutes}}" >
+ </div>
+<div class="col-xs-2 pull-right" >
+ <input type="text" class="form-control"  id="Status" name="Status" value="{{Status}}" ></div>
+     </div>
+</div>
+
+         <div class="panel-body">
+           <div class="col-xs-24">
+             <div class="col-xs-4">
+      <p><label>Alarm Name  : </label> {{AlarmName }} </p>
+      <p><label>Date : </label> {{createdAt}}</p>
+      </div>
+        <div class="col-xs-4">
+        <p><label>Access : </label> {{Access}}</p>
+        <p><label>Last Update : </label> {{LastUpdate}}</p>
+        </div>
+        <div class="col-xs-4">
+          <p><label>PG Connection : </label> {{PG}}</p>
+          </div>
+          <div class="col-xs-4">
+          <p><label>Shift Eng.  : </label>{{ShiftEng}}</p>
+          </div>
+          <form>
+            <p><label></label></p>
+
+
+<button  id="View" class="View btn  pull-right" >View</button>
+
+
+          </form>
+
+
+          </div>
+      </div>
+      </div>
+
+  {{/each}}
+
+</template>
+<template name="search2">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

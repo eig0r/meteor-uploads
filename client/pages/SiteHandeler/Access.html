@@ -1,0 +1,191 @@
+<template name="Access" >
+
+  <div id="Access1" class="panel-collapse collapse off">
+<br><hr class="style1"><br>
+    {{#each AccountDetailsF}}
+
+<div class="form-group">
+    <div class="col-xs-4">
+     <label>Name :</label>   {{name}}
+  </div>
+
+
+  <div class="col-xs-4">
+<label>ID :</label>   {{nationalID}}
+</div>
+
+<div class="col-xs-4">
+<label>Mobile:</label>   {{mobile}}
+</div>
+
+</div>
+{{/each}}
+
+
+
+
+<legend>
+<a href="#collapse01" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">VF Access</a>
+<a href="#collapse02" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">ET Access</a>
+<a href="#collapse03" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">Corprate</a>
+<a href="#20{{_id}}" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">Negotiator</a>
+<a href="#H-S" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">H&S</a>
+<a href="#GA" class="btn btn-defult" data-toggle="collapse" data-parent="#accordion">GA</a>
+</legend>
+
+
+
+
+
+          <div class="panel-body">
+
+
+
+
+                      <div class="panel-body">
+                <div id="collapse03" class="panel-collapse collapse off">
+                <div class="panel-body">
+                  <div class="panel-body">
+
+               <form class="new-Site-Alarm" >
+               <div class="form-group">
+                     <div class="col-xs-4">
+                 <label>Access Type  :</label>  {{Host}}
+                 </div>
+                 <div class="col-xs-4">
+              <label> VF ID   :</label>  {{Vfcode}}
+              </div>
+                     <div class="col-xs-4">
+                 <label>Orange ID    :</label>    {{SiteCode}}
+                   </div>
+              <div class="col-xs-4">
+              <p> <label>Company    :</label>  Huawei</P>
+              </div>
+              </div>
+               </form>
+              </div>
+
+              <button id="Access" class="Access btn btn-primary pull-right">Save</button>
+                <a href="/"  target="_blank" class="btn btn-primary pull-right">Access Clear</a>
+              <a href="/SendMail"  target="_blank" class="btn btn-primary pull-right">Print</a>
+
+                </div>
+                </div>
+              </div>
+
+
+
+
+                                  <div class="panel-body">
+
+
+
+
+                            <div id="20{{_id}}" class="panel-collapse collapse off">
+
+                            <div class="panel-body">
+
+                              <div class="panel-body">
+  {{#each SAI}}
+                           <form class="new-Site-Alarm" >
+                           <div class="form-group">
+                                 <div class="col-xs-4">
+                             <label>Site ID :</label>{{SiteID}}
+                             </div>
+
+                             <div class="col-xs-4">
+                         <label>Site address :</label>
+                         </div>
+
+                         <div class="col-xs-4">
+                     <label>Office :</label>{{Office}}
+                     </div>
+
+                     <div class="col-xs-4">
+                 <label>Shift Eng :</label> <input type="text"  class="user-input" id="ShiftEng" value="{{ShiftEng}}" >
+                 </div>
+
+                     <div class="col-xs-4">
+                 <label>Impact :</label>
+                 <select name="Impact" id="Impact" class="  form-control input-lg"  >
+                                <option >Yes</option>
+                                <option >No</option>
+                            </select>
+                 </div>
+
+                 <div class="col-xs-4">
+             <label>Neg. informing time :</label>
+<div class="input-group clockpicker">
+<input type="text" class="form-control" id="Neg-info-time" value="00:00">
+<span class="input-group-addon">
+ <span class="glyphicon glyphicon-time"></span>
+</span>
+</div>
+             </div>
+
+             <div class="col-xs-4">
+         <label>Clearance Time :</label>
+<div class="input-group clockpicker">
+<input type="text" class="form-control" id="AccessClearanceTime" value="NA">
+<span class="input-group-addon">
+ <span class="glyphicon glyphicon-time"></span>
+</span>
+</div>
+         </div>
+
+         <div class="col-xs-4">
+     <label>Solved Y/N :</label>
+     <select name="Solved" id="Solved" class="  form-control input-lg"  >
+                    <option >NA</option>
+                    <option >Yes</option>
+                    <option >No</option>
+                </select>
+     </div>
+
+     <div class="col-xs-4">
+ <label>solving Duration:</label>
+<input type="text" width="50" class="form-control"  id="solvingDuration" name="solvingDuration" value="NA" >
+ </div>
+
+ <div class="col-xs-4">
+<label>Negotiator Feedback:</label>
+<input type="text" width="50" class="form-control"  id="NegotiatorFeedback" name="NegotiatorFeedback"  value="No Access">
+</div>
+
+<div class="col-xs-4">
+<label>Repeated Case:</label>
+<select name="RepeatedCase" id="RepeatedCase" class="  form-control input-lg"  >
+               <option >Yes</option>
+               <option >No</option>
+           </select>
+
+</div>
+
+                                 <div class="col-xs-4">
+                             <label>Negotiator Name    :</label>
+                              <select name="ConnectionReason" id="AssignedNegotiatorName" class="  form-control input-lg" value="NA"  >
+                                             <option >M.Abdaala</option>
+                                             <option >Emaeel</option>
+                                             <option >Hany</option>
+                                              <option >Ehab</option>
+                                              <option >M.Saeed</option>
+                                         </select>
+                               </div>
+                          </div>
+                           </form>
+{{/each}}
+                          </div>
+
+                          <button id="AccessNeg" class="AccessNeg btn btn-primary pull-right">Save</button>
+                          <a href="/"  target="_blank" class="btn btn-primary pull-right">Access Clear</a>
+                          <a href="/SendMail"  target="_blank" class="btn btn-primary pull-right">Print</a>
+                              <p><label></label></p>
+                            </div>
+                            </div>
+                          </div>
+       </div>
+       </div>
+
+
+
+     </template>

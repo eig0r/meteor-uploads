@@ -1,0 +1,69 @@
+<template name="OctoberOffice">
+{{> SideNav}}
+
+<legend>  <a href="/OctoberOffice" class="btn btn-defult">October   </a>
+<a href="/MaadieOffice" class="btn btn-defult">Maadie</a>
+<a href="/ShoubraOffice" class="btn btn-defult">Shoubra</a>
+<a href="/MohandsenOffice" class="btn btn-defult">Mohandsen   </a>
+<a href="/NasrCityOffice" class="btn btn-defult">Nasr City</a>
+<a href="/GisrSuezOffice" class="btn btn-defult"> Gisr Suez</a>
+<a href="/NewCairoOffice" class="btn btn-defult">New Cairo</a>
+
+</legend>
+
+{{# each mdata }}
+
+
+     <div class="panel panel-primary">
+
+
+
+  <div class="panel-heading">
+<div><span ><label>Site ID  : {{SiteID}}</label>     </span>
+
+   <div class="col-xs-1 pull-right" >
+<input type="text" class="form-control" id="Time" name="Time"  value="{{AlarmSLA.hours}}: {{AlarmSLA.minutes}}" >
+</div>
+<div class="col-xs-2 pull-right" >
+<input type="text" class="form-control"  id="Status" name="Status" value="{{Status}}" ></div>
+    </div>
+</div>
+
+        <div class="panel-body">
+          <div class="col-xs-24">
+            <div class="col-xs-4">
+     <p><label>Alarm Name  : </label> {{AlarmName }} </p>
+     <p><label>Date : </label> {{createdAt}}</p>
+     </div>
+       <div class="col-xs-4">
+       <p><label>Access : </label> {{Access}}</p>
+       <p><label>Last Update : </label> {{LastUpdate}}</p>
+       </div>
+       <div class="col-xs-4">
+         <p><label>PG Connection : </label> {{PG}}</p>
+         </div>
+         <div class="col-xs-4">
+         <p><label>Shift Eng.  : </label>{{ShiftEng}}</p>
+         </div>
+         <form>
+           <p><label></label></p>
+
+
+<button  id="View" class="View btn  pull-right" >View</button>
+
+
+         </form>
+
+
+         </div>
+     </div>
+     </div>
+
+ {{/each}}
+
+
+
+
+
+
+</template>
