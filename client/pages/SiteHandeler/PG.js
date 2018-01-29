@@ -79,8 +79,5 @@ Template.PG.helpers({
 
 
               Template.PG.rendered=function() {
-              	//$('#ConnectedTime').datepicker();
                 $('.clockpicker').clockpicker();
               }
-
-            

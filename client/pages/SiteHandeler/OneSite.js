@@ -60,6 +60,9 @@ Template.OneSite.helpers({
           createdAt:new Date()
         });
 
+         Session.set('usercomment','')
+         document.getElementById("Update").disabled = true;
+
  }
  });
 
@@ -69,6 +72,7 @@ Template.OneSite.helpers({
  Template.OneSite.events({
    "keyup .user-input-comment": function(event) {
      var commentval = event.target.value;
-     Session.set('usercomment',commentval)
+     Session.set('usercomment',commentval);
+         document.getElementById("Update").disabled = false;
    }
  });

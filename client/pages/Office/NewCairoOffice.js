@@ -6,7 +6,7 @@ Meteor.subscribe('AllAlarms');
 
 Template.NewCairoOffice.helpers({
   NewOffice: function() {
-    return SiteAlarmAdd.find({Office:'NewCairo' ,Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
+    return SiteAlarmAdd.find({Office:'New Cairo' ,Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
   }
 });
 Template.NewCairoOffice.events({
@@ -15,6 +15,7 @@ Template.NewCairoOffice.events({
  Session.set('OneSiteID',this.SiteID);
  Session.set('SiteAlarmID',this._id);
   Session.set('AlarmName',this.AlarmName);
+   Session.set('OneSiteOffice',this.Office);
  		 FlowRouter.go('/OneSite');
 
 }

@@ -14,6 +14,7 @@ Template.ShoubraOffice.events({
      event.preventDefault();
  Session.set('OneSiteID',this.SiteID);
  Session.set('SiteAlarmID',this._id);
+  Session.set('OneSiteOffice',this.Office);
  		 FlowRouter.go('/OneSite');
 
 }

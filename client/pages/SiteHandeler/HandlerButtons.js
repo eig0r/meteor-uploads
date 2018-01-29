@@ -5,8 +5,11 @@ Template.HandelerButtons.events({
      event.preventDefault();
 
    var si= Session.get('OneSiteID');
-   var sAi= Session.get('SiteAlarmID');
 
+   var sAi= Session.get('SiteAlarmID');
+   var off= Session.get('OneSiteOffice');
+
+Session.set('OfficeShiftEngn',ShiftEng.find({Office:off} ).fetch());
      Session.set('SiteInformation',CairoOrange.find( { SiteCode:si} ).fetch());
     Session.set('SiteAlarmInformation',SiteAlarmAdd.find({_id:sAi} ).fetch());
 

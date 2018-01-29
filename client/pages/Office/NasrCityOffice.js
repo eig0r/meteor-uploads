@@ -6,7 +6,7 @@ Meteor.subscribe('AllAlarms');
 
 Template.NasrCityOffice.helpers({
   NasrOffice: function() {
-    return SiteAlarmAdd.find({Office:'Nasr',Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
+    return SiteAlarmAdd.find({Office:'Nasr City',Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
   }
 });
 Template.NasrCityOffice.events({
@@ -15,6 +15,7 @@ Template.NasrCityOffice.events({
  Session.set('OneSiteID',this.SiteID);
   Session.set('AlarmName',this.AlarmName);
  Session.set('SiteAlarmID',this._id);
+  Session.set('OneSiteOffice',this.Office);
  		 FlowRouter.go('/OneSite');
 
 }

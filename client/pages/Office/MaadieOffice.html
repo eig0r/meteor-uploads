@@ -14,7 +14,7 @@
 
 
 </legend>
-
+{{>AddAlarm}}
 {{# each MaadeOffice }}
 
 
@@ -23,7 +23,7 @@
 
 
   <div class="panel-heading">
-<div><span ><label>Site ID  : {{SiteID}}</label>     </span>
+<div><span ><label>Site Name  : {{SiteName}}</label>     </span>
 
    <div class="col-xs-1 pull-right" >
 <input type="text" class="form-control" id="Time" name="Time"  value="{{AlarmSLA.hours}}: {{AlarmSLA.minutes}}" >

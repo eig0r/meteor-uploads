@@ -6,7 +6,7 @@ Meteor.subscribe('AllAlarms');
 
 Template.OctoberOffice.helpers({
   mdata: function() {
-    return SiteAlarmAdd.find({Office:'OCT',Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
+    return SiteAlarmAdd.find({Office:'October',Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
   }
 });
 Template.OctoberOffice.events({

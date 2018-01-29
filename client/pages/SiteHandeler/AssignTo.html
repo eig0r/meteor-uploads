@@ -1,14 +1,18 @@
 <template name="AssignTo">
   <div id="AssignTo" class="panel-collapse collapse off">
           <div class="panel-body">
+            {{#each ShifEngName}}
             <div class="col-xs-12">
-             {{>searchShiftEng}}
+              <p><label></label></p>
+          <label>Shift Eng Name : </label>
+            <input type="text" id="ShiftEngName0" value="{{OfficeShiftEng}}">
    <button id="SaveShiftEng" class="SaveShiftEng btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#AssignTo">Save</button>
            </div>
+           {{/each}}
        </div>
        </div>
 </template>
 <template name="searchShiftEng">
 
-  <input type="text" id="searchBox" name="searchBox">
+
 </template>

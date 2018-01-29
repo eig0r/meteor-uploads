@@ -12,7 +12,7 @@
 <div class="panel panel-primary">
 
 <div class="panel-heading">
-    <div><span ><label>Site ID  : {{SiteAlarmInfo.SiteID}}</label>     </span>
+    <div><span ><label>Site Name  : {{SiteAlarmInfo.SiteName}}</label>     </span>
     <div class="col-xs-1 pull-right" >
     <input type="text" class="form-control" id="Time" name="Time"  value="{{SiteAlarmInfo.AlarmSLA.hours}}: {{SiteAlarmInfo.AlarmSLA.minutes}}" >
     </div>
@@ -43,9 +43,11 @@
    </div>
    <form>
     <p><label></label></p>
-    <input type="text" width="50" class="user-input-comment"  id="lastComment" name="lastComment" >
-    <button id="Update" class="Update btn  pull-right" >Update</button>
+
+
    </form>
+   <input type="text" width="50" class="user-input-comment"  id="lastComment" name="lastComment"  value="Waiting for new Update from FM">
+   <button id="Update" type="submit" class="Update btn  pull-right" disabled >Update</button>
    {{>HandelerButtons}}
        </div>
 

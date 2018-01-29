@@ -1,0 +1,32 @@
+<template name="AccessVodafone" >
+  <div id="VFAccess0" class="panel-collapse collapse off">
+    {{#each SsH}}
+    <p><label></label></p>
+    <div class="panel-body">
+ <form class="new-Site-Alarm" >
+ <div class="form-group">
+       <div class="col-xs-4">
+   <label>Access Type  :</label>{{Host}} <input type="text"  class="user-input" id="AccessType" value="{{Host}}" hidden="true" >
+   </div>
+   <div class="col-xs-4">
+<label> VF ID   :</label>  {{Vfcode}}<input type="text"  class="user-input" id="Vfcode" value="{{Vfcode}}" hidden="true" >
+</div>
+       <div class="col-xs-4">
+   <label>Orange ID    :</label>    {{SiteCode}} <input type="text"  class="user-input" id="SiteCode" value="{{SiteCode}}" hidden="true" >
+     </div>
+
+     {{#each SAI}}
+<div class="col-xs-4">
+<p> <label>Company    :</label>  Huawei</P> <input type="text"  class="user-input" id="SiteName" value="{{SiteName}}" hidden="true" >
+</div>
+{{/each}}
+</div>
+ </form>
+</div>
+{{/each}}
+  <button id="AccessVF" class="AccessVF btn btn-primary pull-right">Save</button>
+  <button id="AccessVFclear" class="btn btn-primary pull-right">Access Clear</button>
+  <button id="PrintVF" class="AccessVF btn btn-primary pull-right" href="/SendMail">Print</button>
+
+  </div>
+</template>

@@ -27,7 +27,7 @@
   <tbody>
 {{# each AccessNegotiator}}
   <tr>
-        <td>{{ SiteAddress }}</td>
+        <td>{{ SiteName }}</td>
       <td>{{ SiteID}}</td>
       <td>{{ Office }}</td>
       <td>{{AssignedNegotiatorName}}</td>
@@ -97,29 +97,19 @@
        <thead>
        <tr>
 
-         <th>Site ID</th>
-         <th>Office</th>
-          <th>Site Address</th>
-         <th>Date</th>
-         <th>Access Type</th>
-         <th>Negotiator Name</th>
-         <th>Access Clear time </th>
-         <th>Comment </th>
+         <th>Orange Site Name</th>
+         <th>Orange Site Code</th>
+          <th> VF Code</th>
 
       </tr>
       </thead>
       <tbody>
     {{# each AccessVF}}
       <tr>
-          <td>{{ SiteID}}</td>
-          <td>{{ Office }}</td>
-          <td>{{ SiteAddress }}</td>
+          <td>{{ SiteName}}</td>
+          <td>{{ SiteID }}</td>
+          <td>{{ Vfcode }}</td>
 
-          <td>{{createdAt}}</td>
-          <td>{{ AccessType }}</td>
-          <td>{{ NegName }}</td>
-          <td>{{ClearanceTime}}</td>
-          <td>{{ Reason }}</td>
 
 
       </tr>

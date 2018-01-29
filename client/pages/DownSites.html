@@ -1,0 +1,70 @@
+<template name="DownSites">
+{{> SideNav}}
+<h3>down sites </h3>
+<form>
+   <table class="table table-striped table-bordered table-hover">
+   <thead>
+   <tr>
+        <th>AlarmName</th>
+        <th>Site Address</th>
+        <th>Date</th>
+        <th>SLA</th>
+        <th>Site Type</th>
+        <th>Power Source</th>
+        <th>Area</th>
+        <th>Office</th>
+        <th>Shift Eng</th>
+        <th>Comment</th>
+        <th></th>
+
+  </tr>
+  </thead>
+  <tbody>
+{{# each SiteAlarm}}
+  <tr>
+
+      <td>{{ AlarmName }}</td>
+      <td>{{ SiteName}}</td>
+      <td>{{ createdAt }}</td>
+      <td>{{AlarmSLA.hours}}:{{AlarmSLA.minutes}}</td>
+      <td>{{SiteType}}</td>
+      <td>{{PowerSource}}</td>
+      <td>{{Area}}</td>
+      <td>{{Office}}</td>
+      <td>{{ShiftEng}}</td>
+      <td>{{LastUpdate}}</td>
+
+      <td><button id="Details" class="Details btn  pull-right" >Details</button></td>
+
+
+
+  </tr>
+
+{{/each}}
+  </tbody>
+  </table>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</template>
