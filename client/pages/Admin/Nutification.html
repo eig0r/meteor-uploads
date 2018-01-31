@@ -1,30 +1,100 @@
 <template name="Notification" >
+
+    {{#if isInRole 'admin'}}
 {{>AdminSideNav}}
-<h1>Total Down sites</h1>
-<input type="text" class="form-control" id="DownSites" name="DownSites"  value="{{DownSites}}" >
-
-<h1>Down Access</h1>
-<input type="text" class="form-control" id="DownAccessSites" name="DownAccessSites"  value="{{DownAccessSites}}" >
-
-  <h1>Total Nodal Sites Down</h1>
-  <input type="text" class="form-control" id="DownNodalSites" name="DownNodalSites"  value="{{DownNodalSites}}" >
-
-  <h1>Total VIP Sites Down</h1>
-  <input type="text" class="form-control" id="DownVIPSites" name="DownVIPSites"  value="{{DownVIPSites}}" >
-
-  <h1>Down Generators</h1>
-
-  <h1>Total Access Case</h1>
-  <h1>Access ET Case</h1>
-  <h1>Access VF Case</h1>
-  <h1>Access Co</h1>
-  <h1>Access Neg.</h1>
-
-
-  <h1>Exceed SLA</h1>
-  <h1>PM Charging</h1>
 
 
 
+<div class="panel panel-primary">
 
+<div class="panel-heading">
+    <div><span ><label>Down Sites </label>     </span>
+    </div>
+</div>
+<div class="panel-body">
+   <div class="col-xs-24">
+   <div class="col-xs-4">
+   <p><label> Nodal : </label> {{DownNodalSites}} </p>
+   <label>2G : </label>{{DownSites}}
+   </div>
+   <div class="col-xs-4">
+   <p><label>VIP : </label> {{DownVIPSites}}</p>
+   <p><label>3G : </label> {{Down3GSites}}</p>
+   </div>
+   <div class="col-xs-4">
+   <p><label>Generator: </label> {{DownGen}}</p>
+   </div>
+   <div class="col-xs-4">
+   <p><label>4G  : </label>{{Down4G}}</p>
+   </div>
+   </div>
+   {{>NotificationButtons}}
+       </div>
+
+</div>
+
+<div class="panel panel-primary">
+
+<div class="panel-heading">
+    <div><span ><label>Access Sites : </label>  {{AccessSites}}   </span>
+    </div>
+</div>
+<div class="panel-body">
+   <div class="col-xs-24">
+   <div class="col-xs-4">
+   <p><label> Down  : </label> {{DownAccessSites}} </p>
+   <label>GA: </label>{{AccessGASites}}
+   </div>
+   <div class="col-xs-4">
+   <p><label>ET : </label> {{AccessETSites}}</p>
+   <p><label>VF : </label> {{AccessVFSites}}</p>
+   </div>
+   <div class="col-xs-4">
+   <p><label>CORP : </label> {{AccessAccessCORSites}}</p>
+   </div>
+   <div class="col-xs-4">
+   <p><label>Negetiator : </label>{{AccessAccessNegSites}}</p>
+   </div>
+   </div>
+   <form>
+    <p><label></label></p>
+   </form>
+
+
+       </div>
+
+</div>
+
+<div class="panel panel-primary">
+
+<div class="panel-heading">
+    <div><span ><label> Status </label>     </span>
+    </div>
+</div>
+<div class="panel-body">
+   <div class="col-xs-24">
+   <div class="col-xs-4">
+   <p><label> Exceed SLA : </label> {{ExceedSLA}} </p>
+
+   </div>
+
+   <div class="col-xs-4">
+    <label>PG Connect : </label> {{ConnectedPG}}
+   </div>
+   <div class="col-xs-4">
+   <p><label>PM Charging: </label>{{PmChargeSites}}</p>
+   </div>
+   </div>
+   <form>
+    <p><label></label></p>
+   </form>
+   <button id="SLA" class="Assign btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#CairoEast"  >SLA</button>
+
+   <button id="PM" class="Assign btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#PM"  >PM</button>
+
+   <button id="PG" class="Assign btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#PG"  >PG</button>
+
+       </div>
+</div>
+{{/if}}
 </template>

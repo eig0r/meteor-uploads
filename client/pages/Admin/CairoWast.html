@@ -1,0 +1,35 @@
+<template name="Cairowast">
+
+
+  <div id="CairoWeast1" class="panel-collapse collapse off">
+    <form>
+        <h5>CW Down Sites : {{SitesCount}} </h5>
+       <table class="table table-striped table-bordered table-hover">
+       <thead>
+       <tr>
+
+         <th>Site ID</th>
+             <th>SLA</th>
+              <th>Office</th>
+              <th>Status</th>
+
+      </tr>
+      </thead>
+      <tbody>
+  {{# each CWdownSites }}
+      <tr>
+          <td>{{ SiteID}}</td>
+           <td>{{ AlarmSLA.hours }}:{{ AlarmSLA.minutes }}</td>
+            <td>{{ Office }}</td>
+              <td>{{ Status }}</td>
+              <button id="SaveStatus" class="SaveStatus btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#Status1" >More</button>
+
+
+      </tr>
+  {{/each}}
+      </tbody>
+      </table>
+      </form>
+    </div>
+
+</template>

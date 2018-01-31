@@ -29,7 +29,7 @@ Template.mainView.helpers({
 },
 AlarmncounterOnprogress: function() {
   var today = new Date();
-  return SiteAlarmAdd.find({ Status: { $in: [ 'Team in the way','Team in Site','Waiting FM Action','Clear on PG','not handled yet'] } }).count();
+  return SiteAlarmAdd.find({ Status: { $in: [ 'Team in the way','Team in Site','Waiting FM Action','Clear on PG','not handled yet','PM need Recharge'] } }).count();
 
 
 

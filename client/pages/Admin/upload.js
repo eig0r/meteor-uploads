@@ -1,3 +1,6 @@
+
+Meteor.subscribe('Sales');
+
 Template.upload.onCreated( () => {
   Template.instance().uploading = new ReactiveVar( false );
 });

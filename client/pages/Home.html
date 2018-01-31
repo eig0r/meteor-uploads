@@ -1,26 +1,22 @@
 <template name="Home">
   {{#if isInRole 'admin'}}
 
+{{>Notification}}
 
+{{/if}}
 
+{{#if isInRole 'Eng'}}
+<h4> Welcome back engineer
+<input type="text" class="form-control" id="Drname" name="Dignoses" value="{{reservPatients.drname}}">
 
+<input type="text" class="form-control" id="test" name="test" value="{{testo.Status}}" hidden="true">
 
-  <h4> Welcome back engineer
-  <input type="text" class="form-control" id="Drname" name="Dignoses" value="{{reservPatients.drname}}">
-
-  <input type="text" class="form-control" id="test" name="test" value="{{testo.Status}}" hidden="true">
-
-  <input type="text" class="form-control" id="todayattendTime" name="todayattendTime" value="{{AttendaceStaffSetTime.time}}" hidden="true">
+<input type="text" class="form-control" id="todayattendTime" name="todayattendTime" value="{{AttendaceStaffSetTime.time}}" hidden="true">
 
 {{>OfficeShiftEng}}
 
 Please Enter to start your day...</h4>
 
-  <button type="submit"   class="btn btn-primary"  id="button" >Start</button>
-
-
-
+<button type="submit"   class="btn btn-primary"  id="button" >Start</button>
 {{/if}}
-
-
 </template>

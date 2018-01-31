@@ -1,0 +1,40 @@
+<template name="NodalSites">
+
+
+  <div id="Nodal1" class="panel-collapse collapse off">
+    <form>
+       <table class="table table-striped table-bordered table-hover">
+       <thead>
+       <tr>
+
+         <th>Site ID</th>
+         <th>SLA</th>
+             <th>Area</th>
+              <th>Office</th>
+
+              <th>Status</th>
+                <th></th>
+
+      </tr>
+      </thead>
+      <tbody>
+  {{# each DownNodal }}
+      <tr>
+          <td>{{ SiteID}}</td>
+            <td>{{ AlarmSLA.hours }}:{{ AlarmSLA.minutes }}</td>
+           <td>{{ Area }}</td>
+            <td>{{ Office }}</td>
+
+
+              <td>{{ Status }}</td>
+                <td><button id="SaveStatus" class="SaveStatus btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#Status1" >More</button></td>
+
+
+      </tr>
+  {{/each}}
+      </tbody>
+      </table>
+      </form>
+</div>
+
+</template>

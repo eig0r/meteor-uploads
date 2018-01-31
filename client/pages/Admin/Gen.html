@@ -1,0 +1,39 @@
+<template name="Gen">
+
+
+  <div id="Gen1" class="panel-collapse collapse off">
+
+    <form>
+       <table class="table table-striped table-bordered table-hover">
+       <thead>
+       <tr>
+
+         <th>Site ID</th>
+             <th>Area</th>
+              <th>Office</th>
+              <th>Reason</th>
+              <th></th>
+
+      </tr>
+      </thead>
+      <tbody>
+  {{# each DownGen }}
+      <tr>
+          <td>{{ SiteID}}</td>
+           <td>{{ Area }}</td>
+            <td>{{ Office }}</td>
+              <td>{{ ConnectionReason }}</td>
+            <td>  <button id="SaveStatus" class="SaveStatus btn btn-primary pull-right" data-toggle="collapse" data-parent="#accordion" href="#Status1" >More</button></td>
+
+
+      </tr>
+  {{/each}}
+      </tbody>
+      </table>
+      </form>
+
+
+
+</div>
+
+</template>
