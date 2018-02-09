@@ -4,7 +4,9 @@ Meteor.methods({
 
     for ( let i = 0; i < data.length; i++ ) {
       let item   = data[ i ],
-          exists = SiteAlarmAdd.findOne( { SiteID: item.SiteID } );
+          exists = SiteAlarmAdd.findOne({ SiteID:item.SiteID , AlarmName:item.AlarmName ,createdAt:item.createdAt ,SiteName:item.SiteName} );
+
+ //{ $in: [ item.SiteID ,item.AlarmName] }
 
       if ( !exists ) {
         SiteAlarmAdd.insert( item );
