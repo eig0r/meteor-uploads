@@ -4,7 +4,7 @@ Template.Notification.helpers({
 
   DownSites: function() {
 
-    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] } , Status: { $ne: "Clear" }}).count();
+    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault'] } , Status: { $ne: "Clear" }}).count();
 },
 
 Down3GSites: function() {
@@ -14,15 +14,15 @@ Down3GSites: function() {
 
   DownNodalSites: function() {
 
-    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] } ,SiteType:{ $in: [ 'NODAL'] } , Status: { $ne: "Clear" }}).count();
+    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault'] } ,SiteType:{ $in: [ 'NODAL'] } , Status: { $ne: "Clear" }}).count();
 },
 DownVIPSites: function() {
 
-  return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] } ,SiteType:{ $in: [ 'VIP'] } , Status: { $ne: "Clear" }}).count();
+  return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] } ,SiteType:{ $in: [ 'VIP'] } , Status: { $ne: "Clear" }}).count();
 },
 DownAccessSites: function() {
 
-  return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] } , Access:{ $ne: "Clear" }, Status: { $ne: "Clear" }}).count();
+  return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault'] } , Access:{ $ne: "Clear" }, Status: { $ne: "Clear" }}).count();
 },
 AccessSites: function() {
 
@@ -40,11 +40,11 @@ AccessAccessCORSites: function() {
 ,
 AccessVFSites: function() {
 
-  return SiteAlarmAdd.find({ Access:{ $in: [ 'AccessVF'] } }).count();
+  return SiteAlarmAdd.find({ Access:{ $in: [ 'Access VF'] } }).count();
 },
 AccessETSites: function() {
 
-  return SiteAlarmAdd.find({ Access:{ $in: [ 'AccessET'] } }).count();
+  return SiteAlarmAdd.find({ Access:{ $in: [ 'Access ET'] } }).count();
 },
 
 AccessGASites: function() {

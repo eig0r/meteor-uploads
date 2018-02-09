@@ -64,9 +64,10 @@ Template.Access.events({
 
 
 // End
+
 Template.Access.rendered=function() {
   //$('#ConnectedTime').datepicker();
-  $('.clockpicker3').clockpicker();
+  $('.clockpicker').clockpicker();
 }
 
 Template.Access.events({

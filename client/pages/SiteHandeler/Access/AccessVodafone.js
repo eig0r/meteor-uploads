@@ -17,26 +17,59 @@ Template.Access.events({
       var SiteName= document.getElementById("SiteName").value;
       var Vfcode= document.getElementById("Vfcode").value;
 
-      SiteAccess.insert({
-      SiteID:si,
-      SiteName:SiteName,
-      Area: ar,
-      Office:of,
-      AccessType:AccessType,
-      Vfcode:Vfcode,
-      createdAt:new Date()
-      });
+if(AccessType=='VF'){
+  console.log('VF');
 
-      AllAlarms.insert({
-      SiteID: si,
-      AlarmName: an,
-      Access:'Access VF',
-      createdAt:new Date()
-      });
-    //   return false;
-       var ID=Session.get('SiteAlarmID');
-       SiteAlarmAdd.update({_id:ID},
-         {$set:{Access: 'Access VF' }});
+  SiteAccess.insert({
+  SiteID:si,
+  SiteName:SiteName,
+  Area: ar,
+  Office:of,
+  AccessType:AccessType,
+  Vfcode:Vfcode,
+  createdAt:new Date()
+  });
+
+  AllAlarms.insert({
+  SiteID: si,
+  AlarmName: an,
+  Access:'Access VF',
+  createdAt:new Date()
+  });
+//   return false;
+   var ID=Session.get('SiteAlarmID');
+   SiteAlarmAdd.update({_id:ID},
+     {$set:{Access: 'Access VF' }});
+
+}
+
+if(AccessType=='ET'){
+  console.log('ET');
+
+  SiteAccess.insert({
+  SiteID:si,
+  SiteName:SiteName,
+  Area: ar,
+  Office:of,
+  AccessType:AccessType,
+  ETcode:Vfcode,
+  createdAt:new Date()
+  });
+
+  AllAlarms.insert({
+  SiteID: si,
+  AlarmName: an,
+  Access:'Access ET',
+  createdAt:new Date()
+  });
+//   return false;
+   var ID=Session.get('SiteAlarmID');
+   SiteAlarmAdd.update({_id:ID},
+     {$set:{Access: 'Access ET' }});
+
+
+}
+
 }
   });
 
@@ -60,5 +93,5 @@ Template.AccessVodafone.events({
          {$set:{Access: 'Access VF Clear' }});
 }
 
-  
+
     });

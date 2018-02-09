@@ -3,7 +3,7 @@ Template.Cairowast.helpers({
   },
   SitesCount: function() {
 
-    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] } ,Area:{ $in: [ 'Cairo West'] } , Status: { $ne: "Clear" }}).count();
+    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] } ,Area:{ $in: [ 'Cairo West'] } , Status: { $ne: "Clear" }}).count();
 }
 
 });

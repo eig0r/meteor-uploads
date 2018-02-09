@@ -25,8 +25,7 @@
 
 
 
-  <button id="VFAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#VFAccess0" >VF Access</button>
-  <button id="ETAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#ETAccess0" >ET Access</button>
+  <button id="VFAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#VFAccess0" >VF/ET Access</button>
   <button id="CorpAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#CorpAccess0" >Corprate</button>
   <button id="NegAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#NegAccess0" >Negotiator</button>
   <button id="H-SAccess"    class="btn btn-primary pull-left" data-toggle="collapse" data-parent="#accordion" href="#H-SAccess0" >H-S</button>
@@ -34,31 +33,13 @@
 
 
 
-              {{>AccessVodafone}}
 
-                <div id="ETAccess0" class="panel-collapse collapse off">
-                  <div class="panel-body">
-               <form class="new-Site-Alarm" >
-               <div class="form-group">
-                     <div class="col-xs-4">
-                 <label>Access Type  :</label>  {{Host}}
-                 </div>
-                 <div class="col-xs-4">
-              <label> VF ID   :</label>  {{Vfcode}}
-              </div>
-                     <div class="col-xs-4">
-                 <label>Orange ID    :</label>    {{SiteCode}}
-                   </div>
-              <div class="col-xs-4">
-              <p> <label>Company    :</label>  Huawei</P>
-              </div>
-              </div>
-               </form>
-              </div>
-              <button id="Access" class="Access btn btn-primary pull-right">Save</button>
-                <a href="/"  target="_blank" class="btn btn-primary pull-right">Access Clear</a>
-              <a href="/SendMail"  target="_blank" class="btn btn-primary pull-right">Print</a>
-                </div>
+
+                {{>AccessVodafone}}
+
+                {{>AccessEtisalat}}
+
+
 
 
                 <div id="CorpAccess0" class="panel-collapse collapse off">
@@ -217,7 +198,7 @@
                  </div>
                  <div class="col-xs-4">
              <label>Neg. informing time :</label>
-<div class="input-group clockpicker3">
+<div class="input-group clockpicker">
 <input type="text" class="form-control" id="Neg-info-time" value="00:00">
 <span class="input-group-addon">
  <span class="glyphicon glyphicon-time"></span>

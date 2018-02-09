@@ -3,7 +3,7 @@ Meteor.subscribe('SiteAccess');
 
 Template.DownSites.helpers({
   SiteAlarm: function() {
-    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT','NodeB Unavailable'] } , Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
+    return SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] } , Status: { $ne: "Clear" }},{sort:{createdAt: -1}});
   }
 });
 

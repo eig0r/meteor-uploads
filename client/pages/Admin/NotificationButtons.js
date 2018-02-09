@@ -12,27 +12,27 @@ Session.set('DownGenSites',PgConnection.find({ ConnectionReason:{ $ne: "Main Pow
   Template.NotificationButtons.events({
       'click #CW': function(event){
        event.preventDefault();
-  Session.set('CWdownSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] },Area:{ $in: [ 'Cairo West'] } , Status: { $ne: "Clear" }}).fetch());
+  Session.set('CWdownSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] },Area:{ $in: [ 'Cairo West'] } , Status: { $ne: "Clear" }}).fetch());
   }
     });
 
     Template.NotificationButtons.events({
         'click #CE': function(event){
          event.preventDefault();
-    Session.set('CEdownSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] },Area:{ $in: [ 'Cairo East'] } , Status: { $ne: "Clear" }}).fetch());
+    Session.set('CEdownSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] },Area:{ $in: [ 'Cairo East'] } , Status: { $ne: "Clear" }}).fetch());
     }
       });
 
       Template.NotificationButtons.events({
           'click #Nodal': function(event){
            event.preventDefault();
-      Session.set('DownNodalSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] },SiteType:{ $in: [ 'NODAL'] } , Status: { $ne: "Clear" }}).fetch());
+      Session.set('DownNodalSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] },SiteType:{ $in: [ 'NODAL'] } , Status: { $ne: "Clear" }}).fetch());
       }
         });
 
         Template.NotificationButtons.events({
             'click #VIP': function(event){
              event.preventDefault();
-        Session.set('DownVIPSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML FAULT'] },SiteType:{ $in: [ 'VIP'] } , Status: { $ne: "Clear" }}).fetch());
+        Session.set('DownVIPSites',SiteAlarmAdd.find({ AlarmName:{ $in: [ 'OML Fault','NodeB Unavailable'] },SiteType:{ $in: [ 'VIP'] } , Status: { $ne: "Clear" }}).fetch());
         }
           });
